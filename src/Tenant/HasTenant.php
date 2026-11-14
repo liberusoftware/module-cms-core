@@ -21,7 +21,7 @@ trait HasTenant
 {
     public static function bootHasTenant(): void
     {
-        static::addGlobalScope(new TenantScope);
+        static::addGlobalScope(new TenantScope());
 
         static::creating(function (Model $model): void {
             if ($model->getAttribute('team_id') !== null) {

@@ -45,21 +45,25 @@ final class Site extends Model
         });
     }
 
+    /** @return HasMany<Channel, $this> */
     public function channels(): HasMany
     {
         return $this->hasMany(Channel::class);
     }
 
+    /** @return HasMany<ContentIdentity, $this> */
     public function identities(): HasMany
     {
         return $this->hasMany(ContentIdentity::class);
     }
 
+    /** @return HasMany<ContentAlias, $this> */
     public function aliases(): HasMany
     {
         return $this->hasMany(ContentAlias::class);
     }
 
+    /** @return HasMany<Setting, $this> */
     public function cmsSettings(): HasMany
     {
         return $this->hasMany(Setting::class);
